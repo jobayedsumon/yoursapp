@@ -1,13 +1,77 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #040c28;
+  height: 100vh;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+label {
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.container,
+#root {
+  height: 100%;
+}
+
+.form-control {
+  background-color: #222942;
+  border: none;
+  padding: 15px;
+  border-radius: 10px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.form-control:focus {
+  background-color: #222942;
+  color: #fff;
+}
+
+.btn-custom {
+  background-color: #9a41ea !important;
+  border-color: #9a41ea !important;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 14px;
+  padding: 12px 40px;
+  font-weight: bold;
+}
+
+.error-msg {
+  color: #ff0000;
+  font-size: 11px;
+  background-color: rgba(255, 0, 0, 0.28);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.arrow_box {
+  position: relative;
+  background: #ff000047;
+  border: 1px solid #ff000047;
+}
+
+.arrow_box:before {
+  bottom: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(255, 0, 0, 0);
+  border-bottom-color: #ff000047;
+  border-width: 8px;
+  margin-left: -40px;
 }
