@@ -1,6 +1,12 @@
 import { useState } from "react";
+import { connect, useDispatch } from "react-redux";
+import {
+  setOwnerName,
+  setRepository,
+} from "../redux/GithubData/githubdata.actions";
 
-const LandingPage = () => {
+const LandingPage = (props: any) => {
+  console.log(props);
   const [formState, setformState] = useState({
     owner_name: "",
     repository_name: "",
@@ -9,6 +15,8 @@ const LandingPage = () => {
     owner_name: "",
     repository_name: "",
   });
+
+  const dispatch = useDispatch();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
@@ -32,7 +40,8 @@ const LandingPage = () => {
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     if (formState.owner_name && formState.repository_name) {
-      console.log("submitted: ", formState);
+      dispatch(props.setOwnerName(formState.owner_name));
+      dispatch(props.setRepository(formState.repository_name));
     } else {
       setErrors({
         ...errors,
@@ -127,4 +136,15 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage;
+const mapStateToProps = (state: any) => ({
+  owner_name: state.githubData.owner_name,
+  repository_name: state.githubData.repository_name,
+});
+
+const mapDispatchToProps = (dispatch: any) => ({
+  setOwnerName: (owner_name: string) => dispatch(setOwnerName(owner_name)),
+  setRepository: (repository_name: string) =>
+    dispatch(setRepository(repository_name)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(LandingPage);
