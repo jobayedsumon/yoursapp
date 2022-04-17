@@ -75,3 +75,14 @@ label {
   border-width: 8px;
   margin-left: -40px;
 }
+
+.form-group {
+  position: relative;
+  margin: 10px;
+}
+
+.form-group i.fa {
+  position: absolute;
+  top: 48px;
+  right: 10px;
+}

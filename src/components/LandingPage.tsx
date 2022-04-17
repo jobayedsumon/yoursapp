@@ -70,6 +70,13 @@ const LandingPage = () => {
                   onChange={handleChange}
                   style={errors.owner_name ? { border: "1px solid red" } : {}}
                 />
+                {formState.owner_name !== "" && !errors.owner_name && (
+                  <i
+                    className="fa fa-check text-success"
+                    aria-hidden="true"
+                  ></i>
+                )}
+
                 {errors.owner_name && (
                   <span className="error-msg arrow_box">
                     {errors.owner_name}
@@ -92,6 +99,14 @@ const LandingPage = () => {
                     errors.repository_name ? { border: "1px solid red" } : {}
                   }
                 />
+                {formState.repository_name !== "" &&
+                  !errors.repository_name && (
+                    <i
+                      className="fa fa-check text-success"
+                      aria-hidden="true"
+                    ></i>
+                  )}
+
                 {errors.repository_name && (
                   <span className="error-msg arrow_box">
                     {errors.repository_name}
