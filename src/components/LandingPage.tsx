@@ -7,7 +7,6 @@ import {
 } from "../redux/GithubData/githubdata.actions";
 
 const LandingPage = (props: any) => {
-  console.log(props);
   const [formState, setformState] = useState({
     owner_name: "",
     repository_name: "",
