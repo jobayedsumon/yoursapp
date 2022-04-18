@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { connect, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import {
   setOwnerName,
   setRepository,
@@ -17,6 +18,7 @@ const LandingPage = (props: any) => {
   });
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
@@ -42,6 +44,7 @@ const LandingPage = (props: any) => {
     if (formState.owner_name && formState.repository_name) {
       dispatch(props.setOwnerName(formState.owner_name));
       dispatch(props.setRepository(formState.repository_name));
+      navigate("/issues");
     } else {
       setErrors({
         ...errors,

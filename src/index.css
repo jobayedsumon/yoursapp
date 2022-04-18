@@ -86,3 +86,22 @@ label {
   top: 48px;
   right: 10px;
 }
+
+.card {
+  background-color: #040c28;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-header {
+  background-color: #1d243e;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.bg-dark {
+  background-color: #1d243e !important;
+}
+
+.rounded-pill {
+  height: 20px;
+}

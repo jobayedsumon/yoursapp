@@ -6,6 +6,8 @@ import reportWebVitals from "./reportWebVitals";
 import LandingPage from "./components/LandingPage";
 import { Provider } from "react-redux";
 import store from "./redux/store";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Issues from "./components/Issues";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -13,7 +15,12 @@ const root = ReactDOM.createRoot(
 root.render(
   <Provider store={store}>
     <React.StrictMode>
-      <LandingPage />
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<LandingPage />} />
+          <Route path="/issues" element={<Issues />} />
+        </Routes>
+      </BrowserRouter>
     </React.StrictMode>
   </Provider>
 );

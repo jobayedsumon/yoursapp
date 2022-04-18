@@ -2,7 +2,7 @@ import { SET_OWNER, SET_REPO, SET_ISSUES } from "./githubdata.types";
 
 const INITIAL_STATE = {
   owner_name: "",
-  repo_name: "",
+  repository_name: "",
   issues: [],
 };
 
@@ -22,7 +22,7 @@ const githubReducer = (
     case SET_REPO:
       return {
         ...state,
-        repo_name: action.payload,
+        repository_name: action.payload,
       };
     case SET_ISSUES:
       return {
